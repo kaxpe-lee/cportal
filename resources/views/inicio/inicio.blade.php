@@ -4,29 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ __('header.tittle') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="">
-    <header style="background-color: #233054" class="bg-red-600">
-        <nav class="mx-auto flex items-center justify-between p-2">
-            <div><img src="{{asset('img/logod.png')}}" height="40px" alt=""></div>
-            <div>
-                <ul class="flex gap-x-4 text-white">
-                    <li>Opción 1</li>
-                    <li>Opción 2</li>
-                    <li>Opción 3</li>
-                    <li>Opción 4</li>
-                    <li>Opción 5</li>
+    <header style="" class="bg-red-600 tla-color">
+        <nav class="mx-auto flex items-center justify-between py-2 px-4">
+            <div class="hidden lg:block"><img src="{{asset('img/logod.png')}}" height="40px" alt=""></div>
+            <div class="block lg:hidden"><img src="{{asset('img/logord.png')}}" height="40px" alt=""></div>
+            <div class="hidden lg:block">
+                <ul class="flex gap-x-4 text-white hidden md:flex">
+                    <li>{{ __('header.Home') }}</li>
+                    <li>{{ __('header.About') }}</li>
+                    <li>{{ __('header.How it works') }}</li>
+                    <li>{{ __('header.Pricing') }}</li>
+                    <li>{{ __('header.Contact') }}</li>
                 </ul>
             </div>
-            <div class="flex text-white gap-x-2">
-                <span>DE</span>
-                <span><img src="{{ asset('svg/flags/4x3/de.svg') }}" alt="" class="w-6 h-6"></span>
-                <span><button class="px-4 py-2 bg-white text-blue-300 rounded-lg">Log in</button></span>
+            <div class="block lg:hidden">
+                <div class="relative">
+                    <svg id="dropdownMenuButton" mlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#ffffff" class="h-8 w-8 text-gray-700 inline-block align-middle"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+                    <div id="dropdownMenu" class="absolute z-10 text-white tla-color shadow-md hidden top-full left-1/2 -translate-x-1/2 w-60 mt-4 p-4 rounded">
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Home') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.About') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.How it works') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Pricing') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Contact') }}</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex text-white gap-x-4 items-center">
+                <div class="relative">
+                    <span id="dropdownLangButton" class="flex gap-x-2"><span>DE</span><img src="{{ asset('svg/flags/4x3/de.svg') }}" alt="" class="w-6 h-6"></span>
+                    <div id="dropdownLang" class="absolute z-10 bg-gray-800 shadow-md hidden top-full left-1/2 -translate-x-1/2 w-42 mt-4 p-4 rounded">
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Deutsch</a><img width="20" src="{{asset('svg/flags/4x3/de.svg')}}"></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Français</a><img width="20" src="{{asset('svg/flags/4x3/fr.svg')}}"></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">English</a><img width="20" src="{{asset('svg/flags/4x3/gb.svg')}}"></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Nederlands</a><img width="20" src="{{asset('svg/flags/4x3/nl.svg')}}"></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Español</a><img width="20" src="{{asset('svg/flags/4x3/es.svg')}}"></span>
+                    </div>
+                </div>
+                
+                <span><a href="{{ filament()->getUrl() }}" style="color: #233054" class="px-4 py-1 bg-white text-blue-300 rounded-lg">{{ __('header.Log in') }}</a></span>
             </div>
         </nav>
        
     </header>
+    <div class="relative isolate px-6  lg:px-8">
+        <div class="mx-auto max-w-2xl py-10 sm:py-10 lg:py-20">
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                {{ __('inicio.sec01.p01a') }} <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>{{ __('inicio.sec01.p01b') }}<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="text-center">
+            <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">{{ __('inicio.sec01.p02') }}</h1>
+            <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">{{ __('inicio.sec01.p03') }}</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a href="#" class="rounded-md bg-[#233054] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#222221] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ __('inicio.sec01.btn01') }}</a>
+              <a href="#" class="text-sm/6 font-semibold text-gray-900">{{ __('inicio.sec01.btn02') }} <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="w-full bg-gray-50 py-20 flex justify-center items-center" >
+        <div class="max-w-7xl p-5"> 
+            <h2 class="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">Everything you need to deploy your app</p>
+            <dl class="pt-20 grid grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+                <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-gray-900">
+                    <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#233054]">
+                        <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                        </svg>
+                    </div>
+                    Push to deploy
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-600">Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.</dd>
+                </div>
+                <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-gray-900">
+                    <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#233054]">
+                        <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                        </svg>
+                    </div>
+                    SSL certificates
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-600">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
+                </div>
+                <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-gray-900">
+                    <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#233054]">
+                        <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                        </svg>
+                    </div>
+                    Simple queues
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-600">Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 ga-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 p-10">
+        <div class="text-center my-4">
+            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
+                <span>{{ __('inicio.sec04.card01') }}</span>
+            </div>
+            <div class="h-26 flex justify-center items-center">
+                <img class="pt-4 h-20 mx-auto" src="{{asset('img/at_logo.png')}}"  alt="">
+            </div>
+        </div>
+        <div class="text-center my-4">
+            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
+                <span class="">{{ __('inicio.sec04.card02') }}</span>
+            </div>
+            <div class="h-26 flex justify-center items-center">
+                <img class="pt-4 h-14 mx-auto" src="{{asset('img/aedaf_logo.png')}}" alt="">
+            </div>
+        </div>
+        <div class="text-center my-4">
+            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
+                <span class="">{{ __('inicio.sec04.card03') }}</span>
+            </div>
+            <div class="h-26 flex justify-center items-center">
+                <img class="pt-4 h-16 mx-auto" src="{{asset('img/ce_logo.png')}}"  alt="">
+            </div>
+        </div>
+        <div class="text-center my-4">
+            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
+                <span class="">{{ __('inicio.sec04.card04') }}</span>
+            </div>
+            <div class="h-26 flex justify-center items-center">
+                <img class="pt-4 h-16 mx-auto" src="{{asset('img/ca_logo.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="hidden lg:block  bg-gray-800 pt-6 pb-2">
+            <img class="mx-auto" src="{{asset('img/logod.png')}}" height="40px" alt="">
+        </div>
+        <div class="gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 bg-gray-800 p-1 md:p-10 py-10">
+            <div class="block lg:hidden">
+                <img class="mx-auto" src="{{asset('img/logod.png')}}" height="40px" alt="">
+            </div>
+            <div class="text-center text-gray-400">
+                <h4 class="font-bold uppercase text-gray-100 pb-1">Legal</h4>
+                <p>Terms and conditiones</p>
+                <p>Privacy police</p>
+                <p>Cookie police</p>
+            </div>
+            <div class="text-center text-gray-400">
+                <h4 class="font-bold uppercase text-gray-100 pb-1">Company</h4>
+                <p>About</p>
+                <p>Contact</p>
+                <p>Business Account</p>
+                <p>Referral Program</p>
+            </div>
+            <div class="text-center text-gray-400">
+                <h4 class="font-bold uppercase text-gray-100 pb-1">Our tax services</h4>
+                <p>Pricing</p>
+                <p>How it works</p>
+                <p>Inputed income</p>
+                <p>Rented income</p>
+                <p>Capital Gains Tax</p>
+            </div>
+            <div class="text-center text-gray-400 ">
+                <h4 class="font-bold uppercase text-gray-100 pb-1">Non-resident tax Spain</h4>
+                <p>Non-Resident Tax 2024</p>
+                <p>Non-Resident Tax 2023</p>
+                <p>Non-Resident Tax 2022</p>
+                <p>Non-Resident Tax 2021</p>
+            </div>
+            <div class="text-center text-gray-400">
+                <h4 class="font-bold uppercase text-gray-100 pb-1">Resources</h4>
+                <p>Blog</p>
+                <p>Faq</p>
+                <p>Tax Calculator</p>
+                <p>Sapnish tax glossary</p>
+            </div>
+        </div>
+        <div class="bg-gray-900 text-gray-500 py-5 px-4 md:px-40 text-center">Tla Corp is registered at the Commercial Registry of Alicante, Spain. Tla Corp is a trading style of TLA CORP SLP. with registered office at Calle Velarde, 13 (03202), Elche, Alicante, Spain. </div>
+    </footer>
+    
 </body>
 </html>
