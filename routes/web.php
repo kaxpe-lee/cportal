@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/lang/{locale}', function ($locale) {
-    if (!in_array($locale, ['en', 'es', 'fr','nl'])) {
+    if (!in_array($locale, ['en', 'es', 'fr','nl','de'])) {
         abort(400);
     }
 

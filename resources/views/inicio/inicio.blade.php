@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ __('header.tittle') }}</title>
+    <title>{{ __('header.tit') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="">
@@ -14,22 +14,22 @@
             <div class="block lg:hidden"><img src="{{asset('img/logord.png')}}" height="40px" alt=""></div>
             <div class="hidden lg:block">
                 <ul class="flex gap-x-4 text-white hidden md:flex">
-                    <li>{{ __('header.Home') }}</li>
-                    <li>{{ __('header.About') }}</li>
-                    <li>{{ __('header.How it works') }}</li>
-                    <li>{{ __('header.Pricing') }}</li>
-                    <li>{{ __('header.Contact') }}</li>
+                    <li>{{ __('header.m-1') }}</li>
+                    <li>{{ __('header.m-2') }}</li>
+                    <li>{{ __('header.m-3') }}</li>
+                    <li>{{ __('header.m-4') }}</li>
+                    <li>{{ __('header.m-5') }}</li>
                 </ul>
             </div>
             <div class="block lg:hidden">
                 <div class="relative">
                     <svg id="dropdownMenuButton" mlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#ffffff" class="h-8 w-8 text-gray-700 inline-block align-middle"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
                     <div id="dropdownMenu" class="absolute z-10 text-white tla-color shadow-md hidden top-full left-1/2 -translate-x-1/2 w-60 mt-4 p-4 rounded">
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Home') }}</a></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.About') }}</a></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.How it works') }}</a></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Pricing') }}</a></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.Contact') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.m-1') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.m-2') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.m-3') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.m-4') }}</a></span>
+                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">{{ __('header.m-5') }}</a></span>
                     </div>
                 </div>
             </div>
@@ -57,19 +57,23 @@
                             <span>Nederlands</span>
                             <img width="20" src="{{ asset('svg/flags/4x3/nl.svg') }}" alt="ES">
                         </a>
+                        <a href="{{ route('lang.switch', 'de') }}" class="flex items-center gap-2 hover:bg-gray-700 rounded p-2">
+                            <span>Deutsche</span>
+                            <img width="20" src="{{ asset('svg/flags/4x3/de.svg') }}" alt="DE">
+                        </a>
                     </div>
                 </div>
                 
-                <span><a href="{{ filament()->getUrl() }}" style="color: #233054" class="px-4 py-1 bg-white text-blue-300 rounded-lg">{{ __('header.Log in') }}</a></span>
+                <span><a href="{{ filament()->getUrl() }}" style="color: #233054" class="px-4 py-1 bg-white text-blue-300 rounded-lg">{{ __('header.btn') }}</a></span>
             </div>
         </nav>
        
     </header>
    
     <div id="secc01" class="w-11/12 grid grid-cols-2 gap-4 mx-auto py-10">
-        <div class="p-10">
-            <h2 class="font-semibold tracking-tight text-balance text-5xl tla-text mb-0 p-4">{{ __('inicio.sec01.h1') }}</h2>
-            <p class="text-3xl p-5">{{ __('inicio.sec01.p') }}</p>
+        <div class="p-10 flex flex-col tems-center justify-center">
+            <h2 class="font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl tla-text mb-0 p-4">{{ __('inicio.sec01.h1') }}</h2>
+            <p class="2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg p-5">{{ __('inicio.sec01.p') }}</p>
            
             <div class="mt-4 flex items-center justify-center gap-x-6">
                 <a href="#" class="rounded-md bg-[#233054] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#222221] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ __('inicio.sec01.btn01') }}</a>
@@ -83,7 +87,7 @@
         <div id="secc02" class="w-10/12  mx-auto py-20">
             <h2 class="font-semibold tracking-tight text-balance text-5xl tla-text mb-0 p-5 leading-tight">{{ __('inicio.sec02.h2') }}</h2>
             <p class="text-2xl text-gray-600 mt-3 mb-8 pl-6" >{{ __('inicio.sec02.p') }}</p>
-            <div class="grid grid-cols-2 w-11/12 gap-8 mx-auto pt-14">
+            <div class="grid grid-cols-2 w-11/12 gap-15 mx-auto pt-14">
                 <div class="">
                     <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-1') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-1') }}</p>
@@ -132,8 +136,6 @@
             </div>
         </div>
     </div>
-    <p class="hidden lg:block">Tamaño lg</p>
-    <p class="hidden xl:block">Tamaño xl</p>
     <div style="display:none" class="w-full bg-gray-50 py-20 flex justify-center items-center" >
         <div class="max-w-7xl p-5"> 
             <h2 class="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
@@ -178,7 +180,7 @@
     <div class="grid grid-cols-1 ga-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 p-10">
         <div class="text-center my-4">
             <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
-                <span>{{ __('inicio.sec04.card01') }}</span>
+                <span>{{ __('inicio.sec04.p-1') }}</span>
             </div>
             <div class="h-26 flex justify-center items-center">
                 <img class="pt-4 h-20 mx-auto" src="{{asset('img/at_logo.png')}}"  alt="">
@@ -186,7 +188,7 @@
         </div>
         <div class="text-center my-4">
             <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
-                <span class="">{{ __('inicio.sec04.card03') }}</span>
+                <span class="">{{ __('inicio.sec04.p-3') }}</span>
             </div>
             <div class="h-26 flex justify-center items-center">
                 <img class="pt-4 h-16 mx-auto" src="{{asset('img/ce_logo.png')}}"  alt="">
@@ -194,7 +196,7 @@
         </div>
         <div class="text-center my-4">
             <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
-                <span class="">{{ __('inicio.sec04.card04') }}</span>
+                <span class="">{{ __('inicio.sec04.p-4') }}</span>
             </div>
             <div class="h-26 flex justify-center items-center">
                 <img class="pt-4 h-16 mx-auto" src="{{asset('img/ca_logo.png')}}" alt="">
@@ -202,7 +204,7 @@
         </div>
         <div class="text-center my-4">
             <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
-                <span class="">{{ __('inicio.sec04.card02') }}</span>
+                <span class="">{{ __('inicio.sec04.p-2') }}</span>
             </div>
             <div class="h-26 flex justify-center items-center">
                 <img class="pt-4 h-14 mx-auto" src="{{asset('img/aedaf_logo.png')}}" alt="">

@@ -47,10 +47,10 @@ return [
 
     ],
     'sec04' => [
-        'h2' => 'Colaborador de la Agencia Tributaria',
-        'card02' => 'Miembro de la AEDAf',
-        'card03' => 'Miembro del Col. de Economistas de Alicante',
-        'card04' => 'Miembro del Col. de Abogados de Elche',
+        'p-1' => 'Colaborador de la Agencia Tributaria',
+        'p-2' => 'Miembro de la AEDAf',
+        'p-3' => 'Miembro del Col. de Economistas de Alicante',
+        'p-4' => 'Miembro del Col. de Abogados de Elche',
     ],
     
 

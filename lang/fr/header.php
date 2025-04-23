@@ -13,13 +13,13 @@ return [
     |
     */
 
-    'Tittle' => 'Tla corp App',
-    'Home' => 'Accueil',
-    'About' => 'À propos',
-    'How it works' => 'Comment ça marche',
-    'Pricing' => 'Tarification / Prix',
-    'Contact' => 'Contact',
-    'Log in' => 'Se connecter',
+    'tit' => 'Tla corp App',
+    'm-1' => 'Accueil',
+    'm-2' => 'À propos',
+    'm-3' => 'Comment ça marche',
+    'm-4' => 'Tarification / Prix',
+    'm-5' => 'Contact',
+    'btn' => 'Se connecter',
     
 
 
