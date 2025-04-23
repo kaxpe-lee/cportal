@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="">
-    <header style="" class="bg-red-600 tla-color">
+    <header style="" class="bg-red-600 tla-bg">
         <nav class="mx-auto flex items-center justify-between py-2 px-4">
             <div class="hidden lg:block"><img src="{{asset('img/logod.png')}}" height="40px" alt=""></div>
             <div class="block lg:hidden"><img src="{{asset('img/logord.png')}}" height="40px" alt=""></div>
@@ -35,13 +35,28 @@
             </div>
             <div class="flex text-white gap-x-4 items-center">
                 <div class="relative">
-                    <span id="dropdownLangButton" class="flex gap-x-2"><span>DE</span><img src="{{ asset('svg/flags/4x3/de.svg') }}" alt="" class="w-6 h-6"></span>
+                    <button id="dropdownLangButton" class="flex items-center gap-x-2 cursor-pointer">
+                        <span class="uppercase">{{ strtoupper(app()->getLocale()) }}</span>
+                        <img src="{{ asset('svg/flags/4x3/' . app()->getLocale() . '.svg') }}" alt="" class="w-6 h-6">
+                    </button>
+                
                     <div id="dropdownLang" class="absolute z-10 bg-gray-800 shadow-md hidden top-full left-1/2 -translate-x-1/2 w-42 mt-4 p-4 rounded">
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Deutsch</a><img width="20" src="{{asset('svg/flags/4x3/de.svg')}}"></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Français</a><img width="20" src="{{asset('svg/flags/4x3/fr.svg')}}"></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">English</a><img width="20" src="{{asset('svg/flags/4x3/gb.svg')}}"></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Nederlands</a><img width="20" src="{{asset('svg/flags/4x3/nl.svg')}}"></span>
-                        <span class="flex hover:bg-gray-700 rounded"><a href="#" class="block py-2 px-4">Español</a><img width="20" src="{{asset('svg/flags/4x3/es.svg')}}"></span>
+                        <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center gap-2 hover:bg-gray-700 rounded p-2">
+                            <span>Français</span>
+                            <img width="20" src="{{ asset('svg/flags/4x3/fr.svg') }}" alt="FR">
+                        </a>
+                        <a href="{{ route('lang.switch', 'en') }}" class="flex items-center gap-2 hover:bg-gray-700 rounded p-2">
+                            <span>English</span>
+                            <img width="20" src="{{ asset('svg/flags/4x3/en.svg') }}" alt="EN">
+                        </a>
+                        <a href="{{ route('lang.switch', 'es') }}" class="flex items-center gap-2 hover:bg-gray-700 rounded p-2">
+                            <span>Español</span>
+                            <img width="20" src="{{ asset('svg/flags/4x3/es.svg') }}" alt="ES">
+                        </a>
+                        <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center gap-2 hover:bg-gray-700 rounded p-2">
+                            <span>Nederlands</span>
+                            <img width="20" src="{{ asset('svg/flags/4x3/nl.svg') }}" alt="ES">
+                        </a>
                     </div>
                 </div>
                 
@@ -50,24 +65,76 @@
         </nav>
        
     </header>
-    <div class="relative isolate px-6  lg:px-8">
-        <div class="mx-auto max-w-2xl py-10 sm:py-10 lg:py-20">
-          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                {{ __('inicio.sec01.p01a') }} <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>{{ __('inicio.sec01.p01b') }}<span aria-hidden="true">&rarr;</span></a>
+   
+    <div id="secc01" class="w-11/12 grid grid-cols-2 gap-4 mx-auto py-10">
+        <div class="p-10">
+            <h2 class="font-semibold tracking-tight text-balance text-5xl tla-text mb-0 p-4">{{ __('inicio.sec01.h1') }}</h2>
+            <p class="text-3xl p-5">{{ __('inicio.sec01.p') }}</p>
+           
+            <div class="mt-4 flex items-center justify-center gap-x-6">
+                <a href="#" class="rounded-md bg-[#233054] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#222221] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ __('inicio.sec01.btn01') }}</a>
+                <a href="#" class="text-sm/6 font-semibold text-gray-900">{{ __('inicio.sec01.btn02') }} <span aria-hidden="true">→</span></a>
             </div>
-          </div>
-          <div class="text-center">
-            <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">{{ __('inicio.sec01.p02') }}</h1>
-            <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">{{ __('inicio.sec01.p03') }}</p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
-              <a href="#" class="rounded-md bg-[#233054] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#222221] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ __('inicio.sec01.btn01') }}</a>
-              <a href="#" class="text-sm/6 font-semibold text-gray-900">{{ __('inicio.sec01.btn02') }} <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="flex justify-center items-center p-10"><img class="rounded-xl" src="{{asset('img/secc01.jpg')}}"  alt=""></div>
+    </div>
+    
+    <div id='cont-secc02' class="w-full bg-gray-50">
+        <div id="secc02" class="w-10/12  mx-auto py-20">
+            <h2 class="font-semibold tracking-tight text-balance text-5xl tla-text mb-0 p-5 leading-tight">{{ __('inicio.sec02.h2') }}</h2>
+            <p class="text-2xl text-gray-600 mt-3 mb-8 pl-6" >{{ __('inicio.sec02.p') }}</p>
+            <div class="grid grid-cols-2 w-11/12 gap-8 mx-auto pt-14">
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-1') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-1') }}</p>
+                </div>
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-2') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-2') }}</p>
+                </div>
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-3') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-3') }}</p>
+                </div>
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-4') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-4') }}</p>
+                </div>
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-5') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-5') }}</p>
+                </div>
+                <div class="">
+                    <h3 class="tla-text text-3xl text-semibold">{{ __('inicio.sec02.h3-6') }}</h3>
+                    <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-6') }}</p>
+                </div>
             </div>
-          </div>
         </div>
     </div>
-    <div class="w-full bg-gray-50 py-20 flex justify-center items-center" >
+    
+    <div id="secc03" class="w-10/12 mx-auto py-20 mx-auto py-20">
+        <h2 class="font-semibold tracking-tight text-balance text-6xl text-center tla-text mb-8 p-5 leading-tight">{{ __('inicio.sec03.h2') }}</h2>
+        <div class="grid grid-cols-3 w-full gap-12 mx-auto pt-6">
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="tla-text text-3xl font-semibold text-center">{!! __('inicio.sec03.h3-1') !!}</h3>
+                <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-1') !!}</p>
+                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="tla-text text-3xl font-semibold text-center">{!! __('inicio.sec03.h3-2') !!}</h3>
+                <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-2') !!}</p>
+                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="tla-text text-3xl font-semibold text-center">{!! __('inicio.sec03.h3-3') !!}</h3>
+                <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-3') !!}</p>
+                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+            </div>
+        </div>
+    </div>
+    <p class="hidden lg:block">Tamaño lg</p>
+    <p class="hidden xl:block">Tamaño xl</p>
+    <div style="display:none" class="w-full bg-gray-50 py-20 flex justify-center items-center" >
         <div class="max-w-7xl p-5"> 
             <h2 class="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
             <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">Everything you need to deploy your app</p>
@@ -119,14 +186,6 @@
         </div>
         <div class="text-center my-4">
             <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
-                <span class="">{{ __('inicio.sec04.card02') }}</span>
-            </div>
-            <div class="h-26 flex justify-center items-center">
-                <img class="pt-4 h-14 mx-auto" src="{{asset('img/aedaf_logo.png')}}" alt="">
-            </div>
-        </div>
-        <div class="text-center my-4">
-            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
                 <span class="">{{ __('inicio.sec04.card03') }}</span>
             </div>
             <div class="h-26 flex justify-center items-center">
@@ -139,6 +198,14 @@
             </div>
             <div class="h-26 flex justify-center items-center">
                 <img class="pt-4 h-16 mx-auto" src="{{asset('img/ca_logo.png')}}" alt="">
+            </div>
+        </div>
+        <div class="text-center my-4">
+            <div class="h-2 sm:h-4 md:h-8 lg:h-10 flex justify-center items-start">
+                <span class="">{{ __('inicio.sec04.card02') }}</span>
+            </div>
+            <div class="h-26 flex justify-center items-center">
+                <img class="pt-4 h-14 mx-auto" src="{{asset('img/aedaf_logo.png')}}" alt="">
             </div>
         </div>
     </div>

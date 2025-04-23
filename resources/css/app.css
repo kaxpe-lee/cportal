@@ -10,6 +10,9 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-.tla-color {
+.tla-bg {
     background-color:#233054;
+}
+.tla-text {
+    color: #233054;
 }
