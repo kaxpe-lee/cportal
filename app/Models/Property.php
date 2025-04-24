@@ -13,6 +13,5 @@ class Property extends Model
             ->withTimestamps();
     }
 
-    protected $fillable = ['property_id', 'type_property', 'rented','date_adquisition','referencia_catastro',
-    'valor_catastro','address','address_number','street_number','street_type','city','province','cp'];
+    protected $guarded = [];
 }

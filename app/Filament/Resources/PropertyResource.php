@@ -23,44 +23,40 @@ class PropertyResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('property_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('type_property')
+                Forms\Components\TextInput::make('nombre')
+                    ->label('Nombre para identificar la propiedad')
+                    ->required(),
+                Forms\Components\Select::make('tipo')
+                    ->options([
+                        '0' => 'House-Apartment-Villa-Commercial',
+                        '1' => 'Garage-Parking-Store room',
+                    ]),
+                Forms\Components\TextInput::make('days_rented')
+                    ->label('Número de días alquilad')
+                    ->numeric() // Asegura que el valor sea numérico
+                    ->rules(['numeric', 'min:0', 'max:365'])
+                    ->helperText('Número de días que se ha alquilado la propiedad durante el año'),
+                Forms\Components\Select::make('tipo_calle')
+                    ->label('Tipo de vía')
+                    ->options([
+                        'Calle' => 'Calle',
+                        'Avenida' => 'Avenida',
+                        'Plaza' => 'Plaza'
+                    ]),
+
+                Forms\Components\TextInput::make('direccion')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('rented')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\DatePicker::make('date_adquisition')
-                    ->required(),
+                Forms\Components\TextInput::make('numero_calle'), 
+                Forms\Components\TextInput::make('ciudad'), 
+                Forms\Components\TextInput::make('procincia'),
+                Forms\Components\TextInput::make('codigo_postal'),
                 Forms\Components\TextInput::make('referencia_catastro')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('valor_catastro')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('address')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('address_number')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('street_number')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('street_type')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('city')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('province')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('cp')
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 

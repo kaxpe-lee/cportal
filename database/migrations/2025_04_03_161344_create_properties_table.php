@@ -13,19 +13,17 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->integer('property_id');
-            $table->string('type_property');
-            $table->integer('rented');
-            $table->date('date_adquisition');
-            $table->string('referencia_catastro');
-            $table->integer('valor_catastro');
-            $table->string('address');
-            $table->string('address_number');
-            $table->string('street_number');
-            $table->string('street_type');
-            $table->string('city');
-            $table->string('province');
-            $table->string('cp');
+            $table->integer('nombre');
+            $table->string('tipo');
+            $table->integer('days_rented')->default(0);
+            $table->string('tipo_calle')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('numero_calle')->nullable();
+            $table->string('ciudad')->nullable();
+            $table->string('provincia')->nullable();
+            $table->string('codigo_postal')->nullable();
+            $table->string('referencia_catastro')->nullable();
+            $table->integer('valor_catastro')->nullable();
             $table->timestamps();
         });
     }

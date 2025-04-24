@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('account_id')->constrained()->onDelete('cascade');
             $table->foreignId('property_id')->constrained()->onDelete('cascade');
-            $table->integer('participacion');
+            $table->integer('participacion')->nullable();
+            $table->date('fecha_adquisicion')->nullable();
+            $table->string('cuneta_bancaria')->nullable();
+            $table->string('comentarios')->nullable();
             $table->timestamps();
+
+            $table->unique(['account_id', 'property_id']); // Opcional: Evita duplicados
         });
     }
 

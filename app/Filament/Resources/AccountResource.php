@@ -23,55 +23,45 @@ class AccountResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('tipo_cliente')
+                ->options([
+                    'f' => 'Fisico',
+                    'en' => 'Jurídico',
+                ]),
                 Forms\Components\TextInput::make('nombre'),
                 Forms\Components\TextInput::make('apellidos'),
+                Forms\Components\TextInput::make('nie'),
                 Forms\Components\TextInput::make('email'),
+                Forms\Components\TextInput::make('telefono'),
                 Forms\Components\Select::make('idioma')
                 ->options([
                     'es' => 'ES',
                     'en' => 'EN',
                     'fr' => 'FR',
                 ]),
+                Forms\Components\Select::make('residencia_ue')
+                ->options([
+                    '0' => 'NO',
+                    '1' => 'SI',
+                ]),
+                Forms\Components\TextInput::make('residencia_fiscal_pais'),
+                Forms\Components\TextInput::make('residencia_direccion'),
+                Forms\Components\TextInput::make('residencia_provincia'),
+                Forms\Components\TextInput::make('residencia_ciudad'),
+                Forms\Components\TextInput::make('residencia_cp'),
+                Forms\Components\TextInput::make('residencia_pais'),
+                Forms\Components\DatePicker::make('fecha_nacimiento')
+                    ->required()
+                    ->maxDate(now()),
+
+                Forms\Components\TextInput::make('ciudad_nacimiento'),
+                Forms\Components\TextInput::make('pais_nacimiento'),
+                
                 Forms\Components\Select::make('user_id')
                 ->relationship('user', 'name')
                 ->searchable()
                 ->preload()
-                ->createOptionForm([
-                    Forms\Components\TextInput::make('name')
-                        ->required()
-                        ->maxLength(255),
-                    Forms\Components\TextInput::make('email')
-                        ->label('Email address')
-                        ->email()
-                        ->required()
-                        ->maxLength(255),
-                    Forms\Components\TextInput::make('password')
-                        ->label('password')
-                        ->required(),
-                ])
                 ->required(),
-                Forms\Components\DatePicker::make('fecha_nacimiento')
-                    ->required()
-                    ->maxDate(now()),
-                
-                Forms\Components\Repeater::make('properties')
-                    ->relationship('properties') // Relación con la tabla intermedia
-                    ->schema([
-                        Forms\Components\Select::make('id')
-                            ->label('Propiedad')
-                            ->relationship('properties', 'id') // Mostrar nombre de la propiedad
-                            ->required(),
-                
-                        Forms\Components\TextInput::make('participacion')
-                            ->label('Participación (%)')
-                            ->numeric()
-                            ->minValue(0)
-                            ->maxValue(100)
-                            ->required(),
-                    ])
-                    ->columns(2) // Muestra los campos en dos columnas
-                    ->addable(true) // Permite agregar más propiedades
-                    ->deletable(true), // Permite eliminar propiedades
                 
             ]);
     }

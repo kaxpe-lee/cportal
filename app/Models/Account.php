@@ -18,8 +18,5 @@ class Account extends Model
             
     }
 
-    protected $fillable = ['nombre','user_id', 'email', 'apellidos','idioma','cuenta_id',
-    'telelfono','residencia_direccion','residencia_ciudad','tipo_persona','residencia_provincia',
-    'residencia_cp','nie','residencia_pais','residencia_fiscal_pais','pais_nacimiento',
-    'ciudad_nacimiento','fecha_nacimiento'];
+    protected $guarded = [];
 }

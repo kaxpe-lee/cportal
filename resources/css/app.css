@@ -23,3 +23,7 @@
 .tla-text {
     color: #233054;
 }
+
+.tla-h2 {
+    @apply text-center font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl tla-text mb-0 p-2 md:p-4;
+  }
