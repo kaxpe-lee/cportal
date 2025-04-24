@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="">
-    <header style="" class="bg-red-600 tla-bg">
+    <header style="" class="bg-tla">
         <nav class="mx-auto flex items-center justify-between py-2 px-4">
             <div class="hidden lg:block"><a href="{{ route('web.inicio') }}"><img src="{{asset('img/logod.png')}}" height="40px" alt=""></a></div>
             <div class="block lg:hidden"><a href="{{ route('web.inicio') }}"><img src="{{asset('img/logord.png')}}" height="40px" alt=""></a></div>

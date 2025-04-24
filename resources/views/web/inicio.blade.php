@@ -5,8 +5,8 @@
 @section('content') {{-- Define el contenido para la sección 'content' --}}
     <div id="secc01" class="w-full md:w-11/12 grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto py-8 md:py-10">
         <div class="p-0 md:p-10 flex flex-col tems-center justify-center">
-            <h2 class="text-center font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl lg:text-4xl text-4xl tla-text mb-0 p-2 md:p-4">{{ __('inicio.sec01.h1') }}</h2>
-            <p class="text-center text-2xl xl:text-2xl 2xl:text-3xl p-5 text-gray-600">{{ __('inicio.sec01.p') }}</p>
+            <h2 class="t2 text-center tracking-tight text-balance">{{ __('inicio.sec01.h1') }}</h2>
+            <p class="text-center wp p-5">{{ __('inicio.sec01.p') }}</p>
             <div class="sm:hidden flex justify-center items-center py-4 px-6 md:p-10"><img class="rounded-xl" src="{{asset('img/secc01.jpg')}}"  alt=""></div>
             <div class="mt-4 flex items-center justify-center gap-x-6">
                 <a href="#" class="rounded-md bg-[#233054] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#222221] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ __('inicio.sec01.btn01') }}</a>
@@ -16,33 +16,33 @@
         <div class="hidden md:flex justify-center items-center p-10"><img class="rounded-xl" src="{{asset('img/secc01.jpg')}}"  alt=""></div>
     </div>
 
-    <div id='cont-secc02' class="w-full bg-gray-50">
-        <div id="secc02" class="w-10/12  mx-auto py-8 md:py-20">
-            <h2 class="font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl lg:text-4xl text-4xl tla-text mb-0 p-2 md:p-4">{{ __('inicio.sec02.h2') }}</h2>
-            <p class="text-2xl text-gray-600 mt-3 mb-6 md:mb-8 p-2 md:pl-6" >{{ __('inicio.sec02.p') }}</p>
+    <div id='cont-secc02' class="w-full bg-blue-50">
+        <div id="secc02" class="bg-blue-50 w-10/12  mx-auto py-8 md:py-20">
+            <h2 class="t2 text-left tracking-tight text-balance">{{ __('inicio.sec02.h2') }}</h2>
+            <p class="wp mt-3 mb-6 md:mb-8 p-2 md:pl-6" >{{ __('inicio.sec02.p') }}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-11/12 gap-2 md:gap-15 mx-auto md:pt-14">
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-1') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-1') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-1') }}</p>
                 </div>
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-2') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-2') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-2') }}</p>
                 </div>
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-3') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-3') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-3') }}</p>
                 </div>
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-4') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-4') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-4') }}</p>
                 </div>
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-5') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-5') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-5') }}</p>
                 </div>
                 <div class="">
-                    <h3 class="tla-text text-2xl md:text-3xl font-semibold">{{ __('inicio.sec02.h3-6') }}</h3>
+                    <h3 class="t3">{{ __('inicio.sec02.h3-6') }}</h3>
                     <p class="text-xl text-gray-600 mt-3 mb-8">{{ __('inicio.sec02.p-6') }}</p>
                 </div>
             </div>
@@ -50,22 +50,22 @@
     </div>
 
     <div id="secc03" class="w-10/12 mx-auto py-8 md:py-20">
-        <h2 class="text-center font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl lg:text-4xl text-4xl tla-text mb-0 p-3 md:p-4">{{ __('inicio.sec03.h2') }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 w-full gap-12 mx-auto pt-6">
+        <h2 class="t2 text-center tracking-tight text-balance">{{ __('inicio.sec03.h2') }}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 w-full gap-12 mx-auto pt-10">
             <div class="flex flex-col items-center justify-center mb-8">
-                <h3 class="tla-text text-3xl md:font-semibold text-center">{!! __('inicio.sec03.h3-1') !!}</h3>
+                <h3 class="t3b text-center">{!! __('inicio.sec03.h3-1') !!}</h3>
                 <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-1') !!}</p>
-                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+                <a class="py-3 px-7 text-xl bg-tla text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
             </div>
             <div class="flex flex-col items-center justify-center mb-8">
-                <h3 class="tla-text text-3xl md:font-semibold text-center">{!! __('inicio.sec03.h3-2') !!}</h3>
+                <h3 class="t3b text-center">{!! __('inicio.sec03.h3-2') !!}</h3>
                 <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-2') !!}</p>
-                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+                <a class="py-3 px-7 text-xl bg-tla text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
             </div>
             <div class="flex flex-col items-center justify-center mb-8">
-                <h3 class="tla-text text-3xl md:font-semibold text-center">{!! __('inicio.sec03.h3-3') !!}</h3>
+                <h3 class="t3b text-center">{!! __('inicio.sec03.h3-3') !!}</h3>
                 <p class="text-2xl text-gray-600 mt-3 mb-8 text-center">{!! __('inicio.sec03.p-3') !!}</p>
-                <a class="py-3 px-7 text-xl tla-bg text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
+                <a class="py-3 px-7 text-xl bg-tla text-white rounded-xl" href="#">{!! __('inicio.sec03.btn') !!}</a>
             </div>
         </div>
     </div>

@@ -14,11 +14,11 @@ return [
     */
 
     'tit' => 'Tla corp App',
-    'm-5' => 'Home',
-    'm-4' => 'About',
+    'm-1' => 'Home',
+    'm-2' => 'About',
     'm-3' => 'How it works',
-    'm-2' => 'Pricing',
-    'm-1' => 'About',
+    'm-4' => 'Pricing',
+    'm-5' => 'About',
     'btn' => 'Log in',
     
 

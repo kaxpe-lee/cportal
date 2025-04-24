@@ -15,11 +15,23 @@
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
+
+    --color-tla: #233054;
 }
 
-.tla-bg {
-    background-color:#233054;
+.t2 {
+    @apply font-semibold tracking-tight text-balance 2xl:text-6xl xl:text-5xl text-4xl text-tla p-2 md:p-4 font-semibold; 
 }
-.tla-text {
-    color: #233054;
+
+.t3 {
+    @apply text-tla text-2xl md:text-3xl font-semibold; 
 }
+
+.t3b {
+    @apply text-tla text-3xl font-medium; 
+}
+
+.wp {
+    @apply text-2xl xl:text-2xl 2xl:text-3xl text-gray-600
+}
+
