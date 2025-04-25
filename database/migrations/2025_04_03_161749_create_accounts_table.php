@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('apellidos')->nullable();
             $table->string('nie')->nullable();
             $table->string('email')->nullable();
-            $table->string('telelfono')->nullable();
+            $table->string('telefono')->nullable();
             $table->string('residencia_ue')->nullable();
             $table->string('residencia_fiscal_pais')->nullable();
             $table->string('residencia_direccion')->nullable();

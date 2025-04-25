@@ -28,8 +28,8 @@ class PropertyResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('tipo')
                     ->options([
-                        '0' => 'House-Apartment-Villa-Commercial',
-                        '1' => 'Garage-Parking-Store room',
+                        'House-Apartment-Villa-Commercial' => 'House-Apartment-Villa-Commercial',
+                        'Garage-Parking-Store room' => 'Garage-Parking-Store room',
                     ]),
                 Forms\Components\TextInput::make('days_rented')
                     ->label('Número de días alquilad')
@@ -49,7 +49,7 @@ class PropertyResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('numero_calle'), 
                 Forms\Components\TextInput::make('ciudad'), 
-                Forms\Components\TextInput::make('procincia'),
+                Forms\Components\TextInput::make('provincia'),
                 Forms\Components\TextInput::make('codigo_postal'),
                 Forms\Components\TextInput::make('referencia_catastro')
                     ->required()
@@ -64,35 +64,28 @@ class PropertyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('property_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('nombre')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('type_proprty')
+                Tables\Columns\TextColumn::make('tipo')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('rented')
+                Tables\Columns\TextColumn::make('days_rented')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('date_adquisition')
-                    ->date()
+                Tables\Columns\TextColumn::make('tipo_calle')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('direccion')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('numero_calle')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('ciudad')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('provincia')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('codigo_postal')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('referencia_catastro')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('valor_catastro')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address_number')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('street_number')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('street_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('city')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('province')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('cp')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

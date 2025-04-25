@@ -1,18 +1,22 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('web.inicio');
 })->name('web.inicio');
 
-Route::get('/about', function() {
-    return view('web.about');
-})->name('web.about');
 
+Route::get('/about', [WebController::class, 'about'])->name('web.about');
+Route::get('/pricing', [WebController::class, 'pricing'])->name('web.pricing');
+
+/*
 Route::get('/pricing', function() {
     return view('web.pricing');
 })->name('web.pricing');
+*/
 
 Route::get('/contact', function() {
     return view('web.contact');

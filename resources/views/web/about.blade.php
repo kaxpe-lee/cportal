@@ -5,5 +5,6 @@
 @section('content')
     <div class="py-60 text-center">
         <h1 class="text-6xl">About</h1>
+        
     </div>
 @endsection

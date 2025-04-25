@@ -19,43 +19,70 @@ class AccountResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    public static function getModelLabel(): string
+    {
+        return __('admin.Account.acc_nombre_modelo');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('admin.Account.acc_nombre_modelo_plural');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Select::make('tipo_cliente')
-                ->options([
-                    'f' => 'Fisico',
-                    'en' => 'Jurídico',
-                ]),
-                Forms\Components\TextInput::make('nombre'),
-                Forms\Components\TextInput::make('apellidos'),
-                Forms\Components\TextInput::make('nie'),
-                Forms\Components\TextInput::make('email'),
-                Forms\Components\TextInput::make('telefono'),
+                    ->label(__('admin.Account.acc_tipo_cliente'))
+                    ->options([
+                        "__('admin.Account.acc_tipo_cliente_fisico')" => __('admin.Account.acc_tipo_cliente_fisico'),
+                        "__('admin.Account.acc_tipo_cliente_juridico')" => __('admin.Account.acc_tipo_cliente_juridico'),
+                    ]),
+                Forms\Components\TextInput::make('nombre')
+                    ->label(__('admin.Account.acc_nombre')),
+                Forms\Components\TextInput::make('apellidos')
+                    ->label(__('admin.Account.acc_apellidos')),
+                Forms\Components\TextInput::make('nie')
+                    ->label(__('admin.Account.acc_nie')),
+                Forms\Components\TextInput::make('email')
+                    ->label(__('admin.Account.acc_email')),
+                Forms\Components\TextInput::make('telefono')
+                    ->label(__('admin.Account.acc_telefono')),
                 Forms\Components\Select::make('idioma')
+                ->label(__('admin.Account.acc_idioma'))
                 ->options([
                     'es' => 'ES',
                     'en' => 'EN',
                     'fr' => 'FR',
                 ]),
                 Forms\Components\Select::make('residencia_ue')
+                ->label(__('admin.Account.acc_residencia_ue'))
                 ->options([
                     '0' => 'NO',
                     '1' => 'SI',
                 ]),
-                Forms\Components\TextInput::make('residencia_fiscal_pais'),
-                Forms\Components\TextInput::make('residencia_direccion'),
-                Forms\Components\TextInput::make('residencia_provincia'),
-                Forms\Components\TextInput::make('residencia_ciudad'),
-                Forms\Components\TextInput::make('residencia_cp'),
-                Forms\Components\TextInput::make('residencia_pais'),
+                Forms\Components\TextInput::make('residencia_fiscal_pais')
+                ->label(__('admin.Account.acc_residencia_fiscal_pais')),
+                Forms\Components\TextInput::make('residencia_direccion')
+                ->label(__('admin.Account.acc_residencia_direccion')),
+                Forms\Components\TextInput::make('residencia_provincia')
+                ->label(__('admin.Account.acc_residencia_provincia')),
+                Forms\Components\TextInput::make('residencia_ciudad')
+                ->label(__('admin.Account.acc_residencia_ciudad')),
+                Forms\Components\TextInput::make('residencia_cp')
+                ->label(__('admin.Account.acc_residencia_cp')),
+                Forms\Components\TextInput::make('residencia_pais')
+                ->label(__('admin.Account.acc_residencia_pais')),
                 Forms\Components\DatePicker::make('fecha_nacimiento')
+                ->label(__('admin.Account.acc_fecha_nacimiento'))
                     ->required()
                     ->maxDate(now()),
 
-                Forms\Components\TextInput::make('ciudad_nacimiento'),
-                Forms\Components\TextInput::make('pais_nacimiento'),
+                Forms\Components\TextInput::make('ciudad_nacimiento')
+                ->label(__('admin.Account.acc_ciudad_nacimiento')),
+                Forms\Components\TextInput::make('pais_nacimiento')
+                ->label(__('admin.Account.acc_pais_nacimiento')),
                 
                 Forms\Components\Select::make('user_id')
                 ->relationship('user', 'name')

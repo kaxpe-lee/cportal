@@ -24,7 +24,7 @@
             <div class="block lg:hidden">
                 <div class="relative">
                     <svg id="dropdownMenuButton" mlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#ffffff" class="h-8 w-8 text-gray-700 inline-block align-middle"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-                    <div id="dropdownMenu" class="absolute z-10 text-white tla-bg shadow-md hidden top-full left-1/2 -translate-x-1/2 w-60 mt-4 p-4 rounded">
+                    <div id="dropdownMenu" class="absolute z-10 text-white bg-tla shadow-md hidden top-full left-1/2 -translate-x-1/2 w-60 mt-4 p-4 rounded">
                         <span class="flex hover:bg-gray-700 rounded"><a href="{{ route('web.inicio') }}" class="block py-2 px-4">{{ __('header.m-1') }}</a></span>
                         <span class="flex hover:bg-gray-700 rounded"><a href="{{ route('web.about') }}" class="block py-2 px-4">{{ __('header.m-2') }}</a></span>
                         <span class="flex hover:bg-gray-700 rounded"><a href="{{ route('web.howitworks') }}" class="block py-2 px-4">{{ __('header.m-3') }}</a></span>

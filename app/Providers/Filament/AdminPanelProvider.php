@@ -68,10 +68,6 @@ class AdminPanelProvider extends PanelProvider
             fn (): View => view('custom.menu'),
             #fn () => '<span>Pricing</span><span>Contact</span><span>Help desk</span>',
         );
-        FilamentView::registerRenderHook(
-            PanelsRenderHook::USER_MENU_BEFORE      ,
-            fn (): View => view('custom.lan'),
-        );
 
         /*
         FilamentView::registerRenderHook(
