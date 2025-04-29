@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('web.inicio');
 })->name('web.inicio');
+
+# Rutas de la parte interna de clientes
+Route::get('/customer/inicio', [CustomerController::class, 'inicio'])->name('customer.inicio');
 
 
 Route::get('/about', [WebController::class, 'about'])->name('web.about');

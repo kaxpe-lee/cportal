@@ -10,8 +10,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Support\Facades\FilamentView;
-use Filament\View\PanelsRenderHook;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -19,16 +17,15 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Illuminate\View\View;
 
-class AdminPanelProvider extends PanelProvider
+class TaxesPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('admin')
+            ->id('taxes')
+            ->login()
+            ->path('taxes')
             ->brandLogo(asset('img/logow.png'))
             ->darkModeBrandLogo(asset('img/logod.png'))
             ->brandLogoHeight('55px')
@@ -36,15 +33,15 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => '#233054',
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Taxes/Resources'), for: 'App\\Filament\\Taxes\\Resources')
+            ->discoverPages(in: app_path('Filament/Taxes/Pages'), for: 'App\\Filament\\Taxes\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Taxes/Widgets'), for: 'App\\Filament\\Taxes\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                #Widgets\FilamentInfoWidget::class,
+                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -57,27 +54,8 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->plugins([
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
-            ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
     }
-	public function Boot(): void
-    {
-        FilamentView::registerRenderHook(
-            PanelsRenderHook::TOPBAR_START    ,
-            fn (): View => view('custom.menu'),
-            #fn () => '<span>Pricing</span><span>Contact</span><span>Help desk</span>',
-        );
-
-        /*
-        FilamentView::registerRenderHook(
-            PanelsRenderHook::BODY_END             ,
-            fn (): View => view('custom.foot'),
-        );
-        */
-    }
-    
 }
